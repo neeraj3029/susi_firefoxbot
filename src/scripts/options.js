@@ -244,7 +244,6 @@ function applyUserSettings(){
 
 }
 
-
 function retrieveUserChatHistory(){
 	var chatHistory = BASE_URL+"/susi/memory.json?access_token="+accessToken;
 	$.ajax({
@@ -616,4 +615,14 @@ passwordNew.addEventListener("keyup", function () {
 		passwordLim.setAttribute("hidden", "true");
 		document.getElementById("changepasswordsubmit").removeAttribute("disabled");
 	}
+});
+
+toggle.addEventListener("click", ()=>{
+    toggle.classList.toggle("fa-eye");
+    toggle.classList.toggle("fa-eye-slash");
+    if (toggle.classList.contains("fa-eye")) {
+        document.getElementById("password").type = "password";
+    } else {
+        document.getElementById("password").type = "text";
+    }
 });
